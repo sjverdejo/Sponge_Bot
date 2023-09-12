@@ -4,7 +4,14 @@ const { Client, Collection, GatewayIntentBits } = require('discord.js')
 const { token } = require('./config.json')
 
 //Client instance
-const client = new Client({ intents: [GatewayIntentBits.Guilds ]})
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent
+  ]
+
+})
 
 //COMMANDS
 //attach commands to enable access of commands in other files
@@ -25,8 +32,7 @@ for (const folder of commandFolders) {
     } else {
       console.log(`Command at ${filePath} missing required property.`)
     }
-}
-
+  }
 }
 
 const eventsPath = path.join(__dirname, 'events')

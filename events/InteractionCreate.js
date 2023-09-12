@@ -1,3 +1,4 @@
+//Event handler for slash commands
 const { Events } = require('discord.js')
 
 module.exports = {
