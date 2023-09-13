@@ -8,6 +8,5 @@ module.exports = {
     .setDescription('Learn a fact about sponges'),
   async execute(interaction) {
     await interaction.reply(facts[Math.floor((Math.random() * facts.length))])
-    console.log(interaction)
   }
 }
